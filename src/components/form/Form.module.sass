@@ -1,0 +1,61 @@
+@mixin formButton()
+  width: 200px
+  height: 36px
+  border-radius: 18px
+  border: solid 1px transparent
+  color: #ffff
+  font-size: 18px
+  font-weight: 300
+  cursor: pointer
+  transition: all .1s ease-in-out 
+  &:hover 
+    background-color: transparent
+    color: #313131
+    border-color: #a7a7a7
+    transition: all .1s ease-in-out
+
+@mixin field ()
+    border-radius: 8px
+    border: none
+    outline: none
+    padding: 10px
+    font-size: 16px
+    font-family: cursive
+
+.wrapper
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    div
+        display: flex
+        flex-direction: column
+        margin-bottom: 15px
+        &:last-child
+            display: flex
+            flex-direction: row
+            justify-content: space-around
+    label
+        font-size: 20px
+        margin-bottom: 12px
+    input
+        @include field()
+        min-height: 40px
+    textarea
+        @include field()
+        resize: none
+        
+
+.container
+    width: 50vw
+    &_reset
+        @include formButton()
+        background-color: #c0c0c0
+    &_submit
+        @include formButton()
+        background-color: #1c89ff
+
+h1
+    font-size: 32px
+    font-weight: 400
+    text-align: center
