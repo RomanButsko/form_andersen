@@ -24,17 +24,10 @@
 
 .wrapper
     width: 100%
+    min-height: 100vh
     display: flex
     justify-content: center
     align-items: center
-    div
-        display: flex
-        flex-direction: column
-        margin-bottom: 15px
-        &:last-child
-            display: flex
-            flex-direction: row
-            justify-content: space-around
     label
         font-size: 20px
         margin-bottom: 12px
@@ -54,7 +47,20 @@
     &_submit
         @include formButton()
         background-color: #1c89ff
-
+    &_field
+        display: flex
+        flex-direction: column
+        margin-bottom: 15px
+        &__mistake
+            text-align: left
+            color: #f54b4b
+        &__count
+            text-align: right
+    &_btns
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+        
 h1
     font-size: 32px
     font-weight: 400

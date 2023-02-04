@@ -1,0 +1,31 @@
+.container 
+    width: 50%
+    min-height: 70vh
+    border: 1px solid #c1b7b7
+    background-color: #ffff
+    border-radius: 8px
+    padding: 20px
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    grid-template-rows: 0.5fr 0.5fr 0.5fr 1fr 1fr
+    gap: 20px 0px
+    grid-auto-flow: row
+    grid-template-areas: "name name name" "phone site birthday" "descr descr descr" "lastProj lastProj lastProj" "technology technology technology"
+    &_name 
+        font-size: 24px
+        text-align: center
+        grid-area: name
+    &_phone 
+        grid-area: phone
+    &_birthday 
+        grid-area: birthday
+    &_descr 
+        grid-area: descr
+    &_lastProj 
+        grid-area: lastProj
+    &_technology 
+        grid-area: technology
+    &_site 
+        grid-area: site
+    &_indent
+        margin-top: 10px

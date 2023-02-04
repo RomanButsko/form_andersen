@@ -2,9 +2,9 @@ import { Component } from 'react'
 import Form from './components/form/Form'
 
 class App extends Component {
-    render() {
-        return <Form />
-    }
+  render() {
+    return <Form />
+  }
 }
 
 export default App
