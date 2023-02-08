@@ -1,5 +1,6 @@
 .container 
     width: 50%
+    position: relative
     min-height: 70vh
     border: 1px solid #c1b7b7
     background-color: #ffff
@@ -23,9 +24,18 @@
         grid-area: descr
     &_lastProj 
         grid-area: lastProj
+        word-wrap: break-word
     &_technology 
         grid-area: technology
+        word-wrap: break-word
     &_site 
         grid-area: site
     &_indent
         margin-top: 10px
+        word-wrap: break-word
+    &_modal
+        position: absolute
+        z-index: 3
+        background-color: rgba(0, 0, 0, 0.1)
+    &_hide
+        opacity: 0.3

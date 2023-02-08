@@ -1,21 +1,35 @@
-import { Component } from 'react'
+import { FC } from 'react'
+import { useOutside } from '../../hooks/useOutside'
+import { Popup } from '../../ui/Modal/Modal'
 import { IFormData } from '../form/form.inteface'
 import style from './Questionary.module.sass'
 
-export class Questionary extends Component<IFormData> {
-  render() {
-    const {
-      firstName,
-      lastName,
-      birthday,
-      phone,
-      website,
-      aboutMe,
-      technology,
-      lastProject,
-    } = this.props
-    return (
-      <div className={style.container}>
+export const Questionary: FC<IFormData> = ({
+  firstName,
+  lastName,
+  birthday,
+  phone,
+  website,
+  aboutMe,
+  technology,
+  lastProject,
+}) => {
+  const { ref, isShow, setIsShow } = useOutside(true)
+
+  const closePopup = () => {
+    setIsShow(false)
+  }
+
+  return (
+    <>
+      {isShow && (
+        <div className={style.container_modal} ref={ref}>
+          <Popup show={isShow} onClose={closePopup} title="Успешно">
+            <p>Данные были успешно обработаны</p>
+          </Popup>
+        </div>
+      )}
+      <div className={`${style.container} ${isShow && style.container_hide}`}>
         <div className={style.container_name}>{`${firstName} ${lastName}`}</div>
         <div className={style.container_phone}>
           <i>Телефон:</i> {phone}
@@ -39,6 +53,6 @@ export class Questionary extends Component<IFormData> {
           <div className={style.container_indent}>{technology}</div>
         </div>
       </div>
-    )
-  }
+    </>
+  )
 }

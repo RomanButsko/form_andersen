@@ -4,7 +4,7 @@ export const fields = [
   { type: 'input', field: 'birthday', label: 'Дата рождения:' },
   { type: 'input', field: 'phone', label: 'Телефон:' },
   { type: 'input', field: 'website', label: 'Сайт:' },
-  { type: 'input', field: 'aboutMe', label: 'О себе:' },
+  { type: 'textarea', field: 'aboutMe', label: 'О себе:' },
   { type: 'textarea', field: 'technology', label: 'Стек технологий:' },
   {
     type: 'textarea',

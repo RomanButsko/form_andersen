@@ -1,16 +1,3 @@
-export interface IForm {
-  isValid: boolean
-  value: IFormData
-  errors: IFormData
-  countSymbol: countForm
-}
-
-export type countForm = {
-  aboutMe: number
-  technology: number
-  lastProject: number
-}
-
 export interface IFormData {
   firstName: string
   lastName: string
@@ -20,4 +7,16 @@ export interface IFormData {
   aboutMe: string
   technology: string
   lastProject: string
+}
+
+export interface IFormFields {
+  field: keyof IFormData
+  label: keyof IFormData
+  handleChange: (value: any) => void
+  errors: IFormData
+  value: IFormData
+}
+
+export interface IFormBtns {
+  clear: () => void
 }
