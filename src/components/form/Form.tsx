@@ -71,7 +71,8 @@ export const Form = () => {
   const clear = (e: any) => {
     e.preventDefault()
     setValid(false)
-    setFormErrors(initialFormValues), setFormValue(initialFormValues)
+    setFormErrors(initialFormValues)
+    setFormValue(initialFormValues)
   }
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
