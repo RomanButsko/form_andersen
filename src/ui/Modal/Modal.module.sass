@@ -1,0 +1,26 @@
+.container
+    &_wrapper
+        padding: 20px
+        text-align: center
+        background: #fff
+        border-radius: 5px
+        position: relative
+        transition: all 5s ease-in-out
+        &__title
+            margin-top: 0
+            color: #333
+        &__close
+            position: absolute
+            top: 20px
+            right: 30px
+            transition: all 200ms
+            font-size: 30px
+            font-weight: bold
+            text-decoration: none
+            color: #333
+            &:hover
+                cursor: pointer
+                color: #000
+        &__content
+            max-height: 30%
+            overflow: auto
