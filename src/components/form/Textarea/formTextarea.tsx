@@ -10,7 +10,6 @@ export const FormTextarea: FC<IFormFields> = ({
   errors,
   handleChange,
 }) => {
-  const { maxCountSymbol } = constants
   return (
     <>
       <label htmlFor={field}>{label}</label>
@@ -25,10 +24,10 @@ export const FormTextarea: FC<IFormFields> = ({
       {!value[field].trim() && errors[field] && (
         <div className={style.mistake}>{errors[field]}</div>
       )}
-      {value[field].length <= maxCountSymbol ? (
+      {value[field].length <= constants.maxCountSymbol ? (
         <div className={style.count}>{`Осталось ${
-          maxCountSymbol - value[field].length
-        }/${maxCountSymbol} символов`}</div>
+          constants.maxCountSymbol - value[field].length
+        }/${constants.maxCountSymbol} символов`}</div>
       ) : (
         <div className={style.mistake}>Превышен лимит символов в поле</div>
       )}

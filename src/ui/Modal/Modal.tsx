@@ -2,7 +2,7 @@ import { FC, PropsWithChildren } from 'react'
 import { IModal } from './modal.interface'
 import style from './Modal.module.sass'
 
-export const Popup: FC<PropsWithChildren & IModal> = ({
+export const Modal: FC<PropsWithChildren & IModal> = ({
   title,
   onClose,
   children,

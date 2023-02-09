@@ -11,9 +11,7 @@ export const useOutside = (initialIsVisible: boolean): TypeOut => {
   const ref = useRef<HTMLElement>(null)
 
   const handleClickOutside = (event: any) => {
-    console.log('Зашли')
     if (ref.current && !ref.current.contains(event.target)) {
-      console.log('Зашли2')
       setIsShow(false)
     }
   }

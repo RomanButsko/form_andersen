@@ -1,7 +1,8 @@
 import { FC } from 'react'
 import { useOutside } from '../../hooks/useOutside'
-import { Popup } from '../../ui/Modal/Modal'
+import { Modal } from '../../ui/Modal/Modal'
 import { IFormData } from '../form/form.inteface'
+import { Portal } from './../../portal/Portal'
 import style from './Questionary.module.sass'
 
 export const Questionary: FC<IFormData> = ({
@@ -23,11 +24,13 @@ export const Questionary: FC<IFormData> = ({
   return (
     <>
       {isShow && (
-        <div className={style.container_modal} ref={ref}>
-          <Popup show={isShow} onClose={closePopup} title="Успешно">
-            <p>Данные были успешно обработаны</p>
-          </Popup>
-        </div>
+        <Portal>
+          <div ref={ref}>
+            <Modal show={isShow} onClose={closePopup} title="Успешно">
+              <p>Данные были успешно обработаны</p>
+            </Modal>
+          </div>
+        </Portal>
       )}
       <div className={`${style.container} ${isShow && style.container_hide}`}>
         <div className={style.container_name}>{`${firstName} ${lastName}`}</div>
