@@ -12,7 +12,7 @@ export const Portal: FC<PropsWithChildren> = ({ children }) => {
     return () => {
       document.body.removeChild(container)
     }
-  }, [])
+  }, [container])
 
   return createPortal(children, container)
 }
